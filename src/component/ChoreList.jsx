@@ -17,6 +17,22 @@ export default function ChoreList() {
     }
   }
 
+  const DeleteChore = id => {
+    const updatedChores = chores.filter(chore => chore.id !== id)
+    setChores(updatedChores)
+  }
+
+  const CompleteChore = id => {
+    console.log('completed')
+    const updatedChores = chores.map(chore => {
+      if (chore.id === id) {
+        chore.done = !chore.done
+      }
+      return chore
+    })
+    setChores(updatedChores)
+  }
+
   return (
     <Fragment>
     <Form onSubmit={AddChore} />
@@ -27,6 +43,9 @@ export default function ChoreList() {
           key={chore.id}
           id={chore.id}
           text={chore.text}
+          done={chore.done}
+          deleteChore={DeleteChore}
+          completedChore={CompleteChore}
         />
         )
       }

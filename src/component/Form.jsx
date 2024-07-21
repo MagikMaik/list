@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import './stylesheets/Form.css'
 import {v4 as uuidv4} from 'uuid'
-import { PiDropSimple } from "react-icons/pi";
 export default function Form(props) {
 
   const [input, setInput] = useState('')

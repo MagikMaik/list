@@ -25,7 +25,7 @@
 
 }
 
-.chore.done {
+.done {
   text-decoration: line-through;
   background-color: grey;
 }
